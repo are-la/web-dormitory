@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寝室湿度监测</title>
+   <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/dist/css/bootstrap.min.css') }}">
+    <script src="/static/echarts/echarts.min.js"></script>
+</head>
+
+
+<body>
+
+ <div id="chart-container" style="width: 900px;height:600px;"></div>
+<script>
+    var dom = document.getElementById('chart-container');
+var myChart = echarts.init(dom, null, {
+  renderer: 'canvas',
+  useDirtyRect: false
+});
+var app = {};
+
+var option;
+
+option = {
+     title: {
+    text: 'Humidity Change in the Coming Week'
+  },
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value',
+       axisLabel: {
+      formatter: '{value} %'
+    }
+  },
+  series: [
+    {
+      data: [57, 42, 43, 46, 49, 41, 40],
+      type: 'line'
+    }
+  ]
+};
+
+if (option && typeof option === 'object') {
+  myChart.setOption(option);
+}
+
+window.addEventListener('resize', myChart.resize);
+</script>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+}
+#chart-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+</style>
+</body>
+</html>
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登录</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="static/bootstrap/dist/css/bootstrap.min.css">
+    <script src="static/jquery/dist/jquery.min.js"></script>
+    <script src="static/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="static/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="static/css/AdminLTE.css">
+</head>
+
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#">基于web的智能宿舍管理平台</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">同学，请登录:</p>
+        {#      ================================================login=============================================#}
+        <form action="" method="post">
+            <div class="form-group has-feedback">
+
+                {#          用户名部分，name="username"与后端相呼应#}
+                <input type="text" name="username" class="form-control" placeholder="用户名" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                {#          密码部分，name="password"与后端相呼应#}
+                <input type="password" name="password" class="form-control" placeholder="密码" required>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+            {#        ==============================记住密码 ，这里没有什么用======================================#}
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox"> 记住密码
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+        <div class="container" style=" width :20px;height :10px;position :relative ;top :-34px;">
+            <input type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal" value="注册"/>
+            <!--  定义模态框触发器，此处为按钮触发  -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <!--  定义模态框，过渡效果为淡入，id为myModal,tabindex=-1可以禁用使用tab切换，aria-labelledby用于引用模态框的标题，aria-hidden=true保持模态框在触发前窗口不可见  -->
+                <div class="modal-dialog">
+                    <!--  显示模态框对话框模型（若不写下一个div则没有颜色）  -->
+                    <div class="modal-content">
+                        <!--  显示模态框白色背景，所有内容都写在这个div里面  -->
+
+                        <div class="btn-info modal-header">
+                            <!--  模态框标题  -->
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <!--  关闭按钮  -->
+                            <h4>注册界面</h4>
+                            <!--  标题内容  -->
+                        </div>
+
+
+                        <form action="/regist" method="post">
+                        <div class="modal-body">
+
+
+                            <div class="form-group">
+                                <label for="name">姓名：</label>
+                                <input type="text" name="regist_username" class="form-control" placeholder="请输入姓名..">
+                            </div>
+
+                            <div class="form-container">
+                                <label for="name">密码：</label>
+                                <input type="text" name="regist_password" class="form-control" placeholder="请输入密码..">
+                            </div>
+
+                            <div class="form-container">
+                                <label for="name">邮箱：</label>
+                                <input type="text" name="regist_email" class="form-control" placeholder="请输入邮箱..">
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <!--  模态框底部样式，一般是提交或者确定按钮 -->
+                            <input type="submit" value="提交" class="btn btn-warning"/>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                        </div>
+{#                        }#}
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+
+</body>
+</html>

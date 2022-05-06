@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的账单</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/dist/css/tablecloth.css') }}">
+    <script type="text/javascript" src="../../static/js/tablecloth.js"></script>
+<style>
+
+body{
+	margin:0;
+	padding:0;
+	background:#f1f1f1;
+	font:70% Arial, Helvetica, sans-serif;
+	color:#555;
+	line-height:150%;
+	text-align:left;
+}
+a{
+	text-decoration:none;
+	color:#A64B2A;
+}
+a:hover{
+	text-decoration:none;
+	color:#999;
+}
+h1{
+	font-size:30px;
+	margin:0 20px;
+	line-height:80px;
+    color: #8E3200;
+}
+h2{
+	font-size:120%;
+}
+#container{
+	margin:0 auto;
+	width:680px;
+	background:#fff;
+	padding-bottom:20px;
+}
+#content{margin:0 20px;}
+p.sig{
+	margin:0 auto;
+	width:680px;
+	padding:1em 0;
+}
+form{
+	margin:1em 0;
+	padding:.2em 20px;
+	background:#eee;
+}
+th{
+    font-size: 20px;
+    height: 60px;
+}
+td{
+    font-size: 20px;
+    height: 60px;
+}
+</style>
+</head>
+<body>
+    <h1>账单信息</h1>
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <th>账单编号</th>
+            <th>账单日期</th>
+            <th>水费</th>
+            <th>电费</th>
+        </tr>
+        {% for order in orders %}
+            <tr>
+                <td>{{order.orderid}}</td>
+                <td>{{ order.orderdate}}</td>
+                <td>{{ order.watercost }}</td>
+                <td>{{ order.lightcost }}</td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寝室维修</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/dist/css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static',filename='jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='bootstrap/dist/js/bootstrap.min.js') }}"></script>
+</head>
+<body>
+<form action="" method="post">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">寝室维修</h3>
+            </div>
+            <div class="panel-body" style="text-align:center;">
+                <div class="form-horizontal">
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">寝室设施状态</label>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="设备损坏情况"  value=
+                                        {{ room.equipmentstatus }}
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">宿管联系电话</label>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="请输入要修改的绑定手机号" value=
+                                        ******
+                                >
+                            </div>
+                            <p style="text-align:left;">（如有意外请及时与宿管联系）</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">可疑损坏设备</label>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="有可能损坏的设备，请确定情况" value="{{ room.suspecteddamage }}" title="可疑损坏设备" data-container="body" data-toggle="hover" data-placement="right" data-content="通过摄像头发现的可能有损坏的设备">
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                      $(function () {$("[data-toggle='hover']").popover();});
+                    </script>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">上传报修</label>
+
+                        <form action="/smartroom/roomcheck" method="post">
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="check_reportinformation" placeholder="请输入已发现的损坏设备信息，提交维修部门"  title="上报维修" data-container="body" data-placement="right" data-toggle="popover" data-content="将您的寝室损坏物件信息上报给有关部门">
+                            </div>
+                        </div>
+                        <input  type="submit" value="确定" class="btn btn-warning col-md-1"/>
+                        </form>
+                    </div>
+
+                    <script>
+                     $(function () {$("[data-toggle='popover']").popover();});
+	                 $(function() {$("#myButton").click(function(){
+			         alert("已成功接收到您的上报信息，请耐心等待维修专员与您联系，感谢您的信任与配合！");})})
+                    </script>
+
+                    <div class="modal fade" id="myModal" role="dialog">
+			          <div class="modal-dialog">
+				      <div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span>×</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+                            信息确认
+						</h4>
+					  </div>
+					  <div class="modal-body">
+						<p align="center">
+							<textarea placeholder="无上报信息" class="form-control" rows=3 readonly="true" />
+							{{ room.reportinformation }}
+							</textarea>
+						</p>
+					   </div>
+					   <div class="modal-footer">
+						<p align="center">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								确定
+							</button>
+						</p>
+					   </div>
+				       </div>
+                       </div>
+		            </div>
+
+
+                    <div class="row">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+				           确认上传信息
+			            </button>
+                        <input type="button" value="上报" id="myButton" class="btn btn-info "/>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

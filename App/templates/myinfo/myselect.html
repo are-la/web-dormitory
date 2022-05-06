@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/dist/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <form>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">用户资料查看</h3>
+            </div>
+            <div class="panel-body" style="text-align:center;">
+                <div class="form-horizontal">
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;"></label>
+                        <div class="col-md-2">
+                            <img src={{ user.userpic }}  class="img-circle" alt="个人头像">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">姓名</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.username }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">学号</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.number }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">班级</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.myclass }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">寝室</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.roomname }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">室友</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.roommate1 }},{{ user.roommate2 }},{{ user.roommate3 }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">绑定手机号</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.phone }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">绑定邮箱号</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.email }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">个人简介</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ user.introduction }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#     <input class="input-medium search-query" type="text" value={{ user.username }}>#}
+
+{#     <form class="form-horizontal">#}
+{#				<div class="control-group">#}
+{#					<label class="control-label" for="inputEmail">用户名</label>#}
+{#					<div class="controls">#}
+{#						<input id="inputEmail" type="text" value={{ user.username }} />#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="control-group">#}
+{#					<label class="control-label" for="inputPassword">密码</label>#}
+{#					<div class="controls">#}
+{#						<input id="inputPassword" type="password" value={{ user.password }} />#}
+{#					</div>#}
+{#				</div>#}
+{#     </form>#}
+
+
+{#     <button class="btn btn-primary" type="button">按钮</button>#}
+{#<table class="table">#}
+{#				<thead>#}
+{#					<tr>#}
+{#						<th>#}
+{#							编号#}
+{#						</th>#}
+{#						<th>#}
+{#							产品#}
+{#						</th>#}
+{#						<th>#}
+{#							交付时间#}
+{#						</th>#}
+{#						<th>#}
+{#							状态#}
+{#						</th>#}
+{#					</tr>#}
+{#				</thead>#}
+{#				<tbody>#}
+{#					<tr>#}
+{#						<td>#}
+{#							1#}
+{#						</td>#}
+{#						<td>#}
+{#							TB - Monthly#}
+{#						</td>#}
+{#						<td>#}
+{#							01/04/2012#}
+{#						</td>#}
+{#						<td>#}
+{#							Default#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr class="success">#}
+{#						<td>#}
+{#							1#}
+{#						</td>#}
+{#						<td>#}
+{#							TB - Monthly#}
+{#						</td>#}
+{#						<td>#}
+{#							01/04/2012#}
+{#						</td>#}
+{#						<td>#}
+{#							Approved#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr class="error">#}
+{#						<td>#}
+{#							2#}
+{#						</td>#}
+{#						<td>#}
+{#							TB - Monthly#}
+{#						</td>#}
+{#						<td>#}
+{#							02/04/2012#}
+{#						</td>#}
+{#						<td>#}
+{#							Declined#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr class="warning">#}
+{#						<td>#}
+{#							3#}
+{#						</td>#}
+{#						<td>#}
+{#							TB - Monthly#}
+{#						</td>#}
+{#						<td>#}
+{#							03/04/2012#}
+{#						</td>#}
+{#						<td>#}
+{#							Pending#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr class="info">#}
+{#						<td>#}
+{#							4#}
+{#						</td>#}
+{#						<td>#}
+{#							TB - Monthly#}
+{#						</td>#}
+{#						<td>#}
+{#							04/04/2012#}
+{#						</td>#}
+{#						<td>#}
+{#							Call in to confirm#}
+{#						</td>#}
+{#					</tr>#}
+{#				</tbody>#}
+{#			</table>#}
+</body>
+</html>

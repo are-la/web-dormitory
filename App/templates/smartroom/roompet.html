@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宠物喂养</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/dist/css/bootstrap.css')}}">
+</head>
+<body>
+<form>
+      <form>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">宠物喂食</h3>
+            </div>
+            <div class="panel-body" style="text-align:center;">
+                <div class="form-horizontal">
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;"></label>
+                        <div class="col-md-2">
+                            <img src={{ pet.petpic }}  class="img-circle" alt="宠物头像">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">宠物姓名</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ pet.petname }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">出生日期</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ pet.birth }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">上一次喂食时间</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ pet.FeedTime }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">喂食间隔</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2">
+                                {{ pet.Feedinginterval }}h
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-offset-4">
+                        <label class="col-md-2 col-md-offset-3" style="text-align:right; font-size:18px;">饥饿状况</label>
+                        <div class="col-md-2">
+                            <div class="form-control col-md-2" name="starvation">
+                                {{ pet.starvation }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="/smartroom/roompet" method="post" class="form-group col-md-offset-4" >
+
+                        <div class="col-md-2" style="text-align: center;margin-left:630px;font-size: 8px">
+                            <button formaction="/smartroom/roompet" formmethod="post" class="form-control col-md-2 btn btn-default" style="text-align: center;color: black;background-color: #00ad9c">
+                               喂食
+                            </button>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+</form>
+</body>
+</html>

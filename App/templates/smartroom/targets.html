@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>户外实时温度</title>
+
+
+   <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/dist/css/bootstrap.min.css') }}">
+</head>
+
+
+<body>
+
+<div class="container">
+    <div class="info-side">
+        <div class="today-info-container">
+            <div class="today-info">
+
+
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="precipitation"><span class="title"><h2>天气预报</h2></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="location-container">
+            <button class="location-button"><i data-feather="map-pin"></i><span>设置</span></button>
+        </div>
+
+
+        <div class="location-container">
+            <button class="location-button"><i data-feather="map-pin"></i><span>返回</span></button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="weather-side">
+        <div class="weather-gradient"></div>
+        <div class="date-container">
+            <h2 class="date-dayname">星期三</h2><span class="date-day">2022年5月4日</span><i class="location-icon"
+                                                                                       data-feather="map-pin"></i><span
+                class="location">长沙</span>
+        </div>
+        <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+            <h1 class="weather-temp">27°C</h1>
+            <h3 class="weather-desc">晴</h3>
+        </div>
+    </div>
+    <div class="info-side">
+        <div class="today-info-container">
+            <div class="today-info">
+                <div class="precipitation"><span class="title">空气质量</span><span class="value">良</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="humidity"><span class="title">湿度</span><span class="value">43 %</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="wind"><span class="title">风向</span><span class="value">西南风 4级</span>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="week-container">
+            <ul class="week-list">
+                <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">星期五</span><span
+                        class="day-temp">27/17°C</span></li>
+                <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">星期六</span><span
+                        class="day-temp">31/18°C</span></li>
+                <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">星期日</span><span
+                        class="day-temp">30/17°C</span></li>
+                <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">星期一</span><span
+                        class="day-temp">31/21°C</span></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="location-container">
+            <button class="location-button"><i data-feather="map-pin"></i><span>当前位置：湖南省长沙市 天心区</span></button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="info-side">
+        <div class="today-info-container">
+            <div class="today-info">
+
+
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="precipitation"><span class="title">今日计划：</span><span class="value">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp完成进度</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+                <div class="humidity"><span class="title">软件工程基础</span><span class="value">已完成</span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="wind"><span class="title">数据库原理</span><span class="value">80 %</span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="wind"><span class="title">编译原理</span><span class="value">40 %</span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="wind"><span class="title">跑步打卡</span><span class="value">未完成</span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="precipitation"><span class="title"></span><span class="value"></span>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="wind"><span class="title">参加会议</span><span class="value">已完成</span>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="location-container">
+                    <button class="location-button"><i data-feather="map-pin"></i><span>计划进度：2 / 5</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="week-container">
+
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+
+<!--天气图标调用-->
+<script src="js/feather.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
+

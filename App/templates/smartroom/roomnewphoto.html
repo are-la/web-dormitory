@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入侵检测</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/dist/css/bootstrap.min.css') }}">
+</head>
+
+
+<body>
+
+<h1>
+    new photo page
+</h1>
+
+<form action="" method="post">
+    <div class="panel panel-primary">
+        <select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
+
+        <div class="row">
+            <input type="submit" value="确认选择" class="btn btn-info"/>
+        </div>
+        <div style="width:400px;height: 300px">
+            <img src="{{ origin_path }}" height="100%" width="100%">
+        </div>
+
+        <div style="width:400px;height: 300px">
+            <img src="{{ processed_path }}" height="100%" width="100%">
+        </div>
+    </div>
+</form>
+
+</body>
+
+</html>
+

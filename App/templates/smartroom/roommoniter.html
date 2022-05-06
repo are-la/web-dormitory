@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寝室监控</title>
+ <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/dist/css/bootstrap.min.css') }}">
+</head>
+
+
+<body>
+
+<input type="file" id="file" onchange="onInputFileChange()"><br>
+
+<video id="video_id"  width="400" height="200" controls autoplay loop>你的浏览器不能支持HTML5视频</video><br>
+<button onclick="f('video_2')">提取分析</button><br>
+<video id="video_2" width="400" height="200" style="display:none" >
+    <source src="/static/video/test.mp4" type="video/mp4">
+</video>
+<script>
+function onInputFileChange() {
+      var file = document.getElementById('file').files[0];
+      var url = URL.createObjectURL(file);
+      console.log(url);
+      document.getElementById("video_id").src = url;
+}
+
+function f(a){
+        let myplayer = document.getElementById('video_2');
+        myplayer.play();
+		var obj = document.getElementById(a);
+		if(obj.style.display==""){
+		obj.style.display = "none";
+		}else{
+　　　　　　　　　　　　obj.style.display = "";
+		}
+}
+</script>
+</body>
+
+</html>
+
